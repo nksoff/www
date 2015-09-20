@@ -1,0 +1,47 @@
+/* =Some helpers
+-----------------------------------------------------------------------------*/
+.text--nowrap {
+    white-space: nowrap;
+}
+
+/* =Project
+-----------------------------------------------------------------------------*/
+.wrapper {
+    .width-100;
+    max-width: 90em;
+
+    &--indent {
+        padding: 9% 11% 0;
+        @media only screen and (max-width: 767px) {
+            padding: 5% 7% 0;
+        }
+    }
+}
+
+.header {
+    margin-bottom: 2em;
+
+    &_text {
+        text-decoration: underline;
+        float: left;
+    }
+
+    &_menu {
+        float: right;
+
+        &_item {
+            &--active {
+                color: @color-blue; 
+                text-decoration: none;
+            }
+        }
+    }
+
+    .clearfix;
+}
+
+.content {
+    &_about {
+        margin-bottom: 2.4em;
+    }
+}

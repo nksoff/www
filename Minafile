@@ -1,0 +1,51 @@
+###
+## Deploy script for mina (http://nadarei.co/mina)
+###
+
+require 'mina/git'
+
+set :domain, 'front.nksoff.ru'
+set :deploy_to, '/var/www/nksoff-www'
+set :releases_path, 'releases'
+set :shared_path, 'shared'
+set :current_path, 'current'
+set :repository, 'https://github.com/nksoff/www.git'
+set :branch, 'master'
+
+set :shared_paths, ['node_modules']
+
+task :setup  do
+  # directories
+  queue! %[mkdir -p "#{deploy_to}/shared/node_modules"]
+end
+
+desc "Deploys the current version to the server."
+task :deploy do
+  deploy do
+    invoke :'git:clone'
+    invoke :'deploy:link_shared_paths'
+    invoke :'post_deploy:npm'
+    invoke :'post_deploy:grunt'
+    invoke :'post_deploy:rights'
+  end
+end
+
+namespace :post_deploy do
+  desc "Installs npm packages."
+  task :npm do
+    queue %[echo "-----> installing npm packages"]
+    queue %[npm install]
+  end
+
+  desc "Creates static files."
+  task :grunt do 
+    queue %[echo "-----> creating static files"]
+    queue %[grunt deploy]
+  end
+
+  desc "Adds valid unix rights for release."
+  task :rights do
+    queue %[echo "-----> adding valid unix rights for release."]
+    queue %[chgrp -R www-data "."]
+  end
+end
