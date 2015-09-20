@@ -26,7 +26,6 @@ task :deploy do
     invoke :'deploy:link_shared_paths'
     invoke :'post_deploy:npm'
     invoke :'post_deploy:grunt'
-    invoke :'post_deploy:rights'
   end
 end
 
@@ -34,18 +33,13 @@ namespace :post_deploy do
   desc "Installs npm packages."
   task :npm do
     queue %[echo "-----> installing npm packages"]
-    queue %[npm install]
+    queue %[npm install &> /dev/null]
   end
 
   desc "Creates static files."
   task :grunt do 
     queue %[echo "-----> creating static files"]
-    queue %[grunt deploy]
+    queue %[grunt prod]
   end
 
-  desc "Adds valid unix rights for release."
-  task :rights do
-    queue %[echo "-----> adding valid unix rights for release."]
-    queue %[chgrp -R www-data "."]
-  end
 end
