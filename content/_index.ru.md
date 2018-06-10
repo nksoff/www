@@ -1,6 +1,5 @@
 ---
 title: Привет.
-description: hey
 layout: simple-page
 ---
 

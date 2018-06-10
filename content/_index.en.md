@@ -1,6 +1,5 @@
 ---
 title: Hi.
-description: hey
 layout: simple-page
 ---
 
