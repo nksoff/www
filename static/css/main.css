@@ -600,3 +600,24 @@ pre, code {
         display: none;
     }
 }
+
+/* Helpers
+======================================================================= */
+
+.text--red {
+    color: #a40800;
+    border-bottom-color: #a40800;
+}
+
+.text--gray {
+    color: #d1d1d1;
+}
+
+.text--abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.text--nowrap {
+    white-space: nowrap;
+}
