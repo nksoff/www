@@ -1,0 +1,6 @@
+DefaultContentLanguage = "ru"
+
+[languages]
+  [languages.ru]
+    baseURL = "http://nksoff.ru/"
+    title = "Никита Слимов"
