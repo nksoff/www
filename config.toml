@@ -4,6 +4,10 @@ DefaultContentLanguage = "ru"
   [languages.ru]
     baseURL = "http://nksoff.ru/"
     title = "Никита Слимов"
+    [languages.ru.params]
+      titleAbbr = "Слимов Н."
   [languages.en]
     baseURL = "http://en.nksoff.ru/"
     title = "Nikita Slimov"
+    [languages.en.params]
+      titleAbbr = "Slimov N."
