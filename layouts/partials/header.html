@@ -1,34 +1,3 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>
-        {{- if not .IsHome }}
-        {{- if eq .Kind "page" }}{{ .Title }}
-        {{- else if eq .Data.Singular "tag" }}{{ .Data.Term }}
-        {{- else }}Posts
-        {{- end }} - {{ end }}
-        {{- .Site.Title -}}
-    </title>
-    <link href="/css/main.css" rel="stylesheet">
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-</head>
-<body class="{{if or (eq .Kind `page`) (eq .Kind `home`) }}single{{else}}list{{ .Kind }}{{end}}">
-<header class="header">
-    <p class="title"><a href="{{ `/` }}"><span></span>{{ .Site.Params.titleAbbr }}</a></p>
-    <button class="menu-toggle" type="button"></button>
-    <nav class="menu">
-        <ul>
-            {{ range $.Site.Home.AllTranslations }}
-            <li {{ if eq $.Site.Home.Language .Language }}class="active" {{ end }}>
-                <a href="{{ .Permalink }}">{{ .Lang }}</a>
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<nav class="navigation">
+    <section class="container"></section>
+</nav>

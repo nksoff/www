@@ -2,12 +2,10 @@ DefaultContentLanguage = "ru"
 
 [languages]
   [languages.ru]
-    baseURL = "http://nksoff.ru/"
+    LanguageCode = "ru"
+    baseURL = "https://nksoff.ru/"
     title = "Никита Слимов"
-    [languages.ru.params]
-      titleAbbr = "Слимов Н."
   [languages.en]
-    baseURL = "http://en.nksoff.ru/"
+    LanguageCode = "en"
+    baseURL = "https://en.nksoff.ru/"
     title = "Nikita Slimov"
-    [languages.en.params]
-      titleAbbr = "Slimov N."

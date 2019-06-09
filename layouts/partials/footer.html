@@ -1,20 +1,8 @@
-</main>
-<footer class="footer text--gray">
-    <span>&copy; {{ if eq now.Year 2018 }}2018{{ else }}2018-{{ now.Year }}{{ end }} {{ .Site.Params.titleAbbr }}</span>
+<footer class="footer">
+    <section class="container">
+        {{ with .Site.Params.footercontent | safeHTML }}
+        <p>{{.}}</p>
+        {{ end }}
+        © {{ now.Format "2006" }}
+    </section>
 </footer>
-<script>
-    function menuToggle() {
-        var $toggle = document.querySelector('.menu-toggle');
-        if (!$toggle.offsetParent) {
-            return;
-        }
-        var $body = document.querySelector('body');
-        $toggle.addEventListener('click', function () {
-            $body.classList.toggle('noscroll');
-        }, false);
-    }
-
-    menuToggle();
-</script>
-</body>
-</html>
