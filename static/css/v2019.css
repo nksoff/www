@@ -301,7 +301,7 @@ code {
     font-family: source code pro, lucida console, monospace;
     font-size: 1.6rem;
     font-weight: 400;
-    background-color: #e0e0e0;
+    /*background-color: #e0e0e0;*/
     color: #212121;
     padding: .2rem .4rem
 }
